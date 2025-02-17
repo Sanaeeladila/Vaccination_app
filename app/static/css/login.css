@@ -1,0 +1,111 @@
+
+
+.hero-wrap {
+    background-color:#f3f9ff ;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5e8ec2;
+    overflow: hidden; /* Cache les débordements de l'image */
+    
+}
+  
+  
+.hero-wrap .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Assure que l'overlay couvre le fond */
+}
+  
+.hero-wrap .container {
+    z-index: 2; /* Place le contenu par-dessus l'overlay */
+    margin-right: 50px;
+    margin-left: 30px;
+}
+  
+.hero-wrap .row {
+    display: flex;
+    justify-content: space-between; /* Espacement entre le texte et l'image */
+    align-items: center;
+}
+  
+  
+.hero-wrap .text h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+  
+.hero-wrap .text .lead {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 200;
+}
+  
+ 
+
+.login-container {
+    padding: 20px 65px 20px 40px; /* Plus de padding à droite */
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.login-container h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #5e8ec2;
+}
+
+/* Style pour les champs d'entrée */
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Inclure le padding dans la largeur */
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #276bb5; 
+    outline: none; 
+}
+
+/* Style pour le bouton */
+button {
+    margin: 25px auto; 
+    padding: 10px 40px;
+    background-color: #5e8ec2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block; /* S'assurer que le bouton prend une ligne complète */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #276bb5;
+    transform: scale(1.02); /* Légère mise en avant */
+}
+
+/* Style pour les erreurs */
+.error {
+    color: red;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}

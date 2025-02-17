@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination</title>
+    <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="hero-wrap" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 text-center ftco-animate">
+                    <div class="text w-100 mb-md-5 pb-md-5">
+                        <h1 class="mb-4">Le Carnet de vaccination numérique</h1>
+                        <p class="lead">Protégez la santé de votre bébé, un vaccin à la fois</p>
+                    </div>
+                </div>
+    
+                <!-- Login Column -->
+                <div class="col-lg-4">
+                    <div class="login-container">
+                        <h2>Connexion</h2>
+                        <form action="/login" method="POST">
+                            <input type="email" name="email" placeholder="Adresse email" required>
+                            <input type="password" name="password" placeholder="Mot de passe" required>
+                            <button type="submit">Se connecter</button>
+                        </form>
+                        {% if error %}
+                        <div class="error">{{ error }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

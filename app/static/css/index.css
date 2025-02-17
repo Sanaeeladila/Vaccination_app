@@ -1,0 +1,310 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+/* Navbar */
+/* Navbar style */
+#ftco-navbar {
+  background-color: #5e8ec2; 
+  padding: 15px 0;
+}
+
+#ftco-navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top:10px;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.nav-link {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #f8f9fa;
+}
+
+/* Navbar Toggler Button (visible only on mobile) */
+#navbar-toggler {
+  display: none;
+  background-color: #5e8ec2;
+  border: none;
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+}
+
+#navbar-toggler .menu-icon {
+  font-size: 20px;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+  /* Toggler button should appear */
+  #navbar-toggler {
+      display: block;
+  }
+
+  /* Navbar links should be hidden initially */
+  .navbar-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      padding: 10px 0;
+  }
+
+  .navbar-links.active {
+      display: flex;
+  }
+
+  .nav-item {
+      margin: 10px 0;
+  }
+
+  .nav-link {
+      font-size: 18px;
+  }
+}
+/* Hero Section */
+.hero-wrap {
+  background-color: #5e8ec2;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden; /* Cache les débordements de l'image */
+}
+
+
+.hero-wrap .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Assure que l'overlay couvre le fond */
+}
+
+.hero-wrap .container {
+  z-index: 2; /* Place le contenu par-dessus l'overlay */
+  margin-right: 85px;
+  margin-left: -20px;
+}
+
+.hero-wrap .row {
+  display: flex;
+  justify-content: space-between; /* Espacement entre le texte et l'image */
+  align-items: center;
+}
+
+
+
+.hero-wrap .ftco-animate {
+  animation: fadeInUp 1s ease-out; /* Animation d'entrée */
+}
+
+.hero-wrap .text h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero-wrap .text .lead {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-weight: 200;
+}
+
+.hero-wrap .btn-primary {
+  font-size: 1rem;
+  padding: 10px 25px;
+  background-color: #fff;
+  border: none;
+  color: #28415c;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-wrap .btn-primary:hover {
+  background-color: #fff;
+  text-transform: none;
+}
+
+.hero-wrap .hero-image img {
+  width: 300px; /* Fixe la largeur à 300px */
+  height: 200px; /* Fixe la hauteur à 200px */
+  object-fit: cover;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-wrap .text h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-wrap .text .lead {
+      font-size: 1rem;
+  }
+
+  .hero-wrap .col-lg-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+
+  .hero-wrap .hero-image img {
+      width: 100%;
+      height: auto;
+  }
+
+  .hero-wrap .btn-primary {
+      font-size: 1rem;
+  }
+}
+
+/* card-container */
+
+/* Card Container */
+.card-container {
+  background-color: #f3f9ff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card-container-title {
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 10px;
+  text-align: center;
+  color:#28415c;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Espacement entre les cartes */
+}
+
+/* Cartes */
+.card {
+  background-color: #fff;
+  width: 22rem; /* Augmenter la largeur des cartes */
+  border: 1px solid #ddd; /* Bordure autour des cartes */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.card:hover {
+  transform: scale(1.00); /* Légère mise en valeur au survol */
+}
+
+.card-img-top {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #276bb5;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #050505;
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  border: none;
+  text-decoration: none;
+  color: #555;
+}
+
+.btn-primary:hover {
+  text-decoration: underline;
+}
+
+/* footer */
+.ftco-footer {
+  background-color: #5e8ec2;
+  color: #ffffff;
+  padding: 40px 0;
+  text-align: center; /* Centre tout le contenu dans le footer */
+}
+
+.ftco-footer .footer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px; /* Ajoute un peu d'espace sous le titre */
+}
+
+.ftco-footer .text-center p {
+  font-size: 1rem;
+  color: #ddd;
+  margin: 0; /* Supprime la marge par défaut du paragraphe */
+}
+
+.ftco-footer .text-center {
+  margin-top: 20px;
+}
+
+/* Optionnel : Ajout d'un petit style pour améliorer la lisibilité */
+.ftco-footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.ftco-footer a:hover {
+  text-decoration: underline;
+}

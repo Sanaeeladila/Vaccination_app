@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccination</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 13px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            font-size: 13px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: #ff7700;
+        }
+        .navbar-brand {
+            color: white;
+            font-size: 17px;
+            margin-left: 60px;
+            margin-top: 75px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            z-index: 600;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a class="navbar-brand" href=""><i class="fa-solid fa-crutch" style="color: #fff; margin-right: 10px;"></i>MesVaccins</a>
+        
+
+
+        <ul class="side-menu top">
+            <li class="active">
+                <a href="#" class="nav-link">
+                    <span class="text" style="margin-left: 45px; ">Tableau de bord</span>
+                </a>
+            </li>
+            <li>
+                <a href="/kid_info" class="nav-link">
+                    <span class="text" style="margin-left: 45px;">Dossier du Bébé</span>
+                </a>
+            </li>
+            
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="/logout" class="menu-item logout" data-target="settings-section">
+                    <span class="text" style="margin-left: 45px;">Se déconnecter</span>
+                </a>
+            </li>
+        </ul>
+
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- CONTENT -->
+    <section id="content">
+        <!-- NAVBAR -->
+        <nav>
+            <form action="#" style="margin-left: 22%;">
+            </form>  
+        </nav>
+        <!-- NAVBAR -->
+
+        <!-- MAIN -->
+        <main>
+            <!-- Autres sections de contenu -->
+
+            <div >
+                
+                <h1 style="font-size: 24px; color: #333;  text-align:center;">Bienvenue sur votre tableau de bord</h1> <br><br>
+                
+                <div class="container">
+                    <p style="color: #002952;">Vaccins Non Administrés</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Vaccins</th>
+                                <th>Age</th>
+                                <th>Jour</th>
+                                <th>Date du Vaccin</th>
+                                <th>Reporter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for vaccin in vaccins_na %}
+                            <tr>
+                                <td>{{ vaccin.vaccins }}</td>
+                                <td>{{ "5 Ans" if vaccin.age == 60 else vaccin.age ~ " Mois" }}</td>
+                                <td>{{ vaccin.jour }}</td>
+                                <td>{{ vaccin.date_vaccin }}</td>
+                                <td><a href="/report_vaccin/{{ vaccin.ids_vaccinations }}">Reporter</a></td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="3">Aucun vaccin non administré pour cet enfant.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                   
+                </div>           
+            </div>
+        </main>
+    </section>
+    <!-- CONTENT -->
+</body>
+</html>
